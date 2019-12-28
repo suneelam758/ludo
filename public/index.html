@@ -1,0 +1,116 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background: rgba(0, 0, 0, 0.4);
+        }
+        .container{
+            width: 70%;
+            margin: auto;
+            text-align: center;
+        }
+        h1{
+            font-family: 'Indie Flower', cursive;
+            font-size: 100px;
+            color: tomato;
+            text-shadow: 10px 10px #262626;
+            
+
+        }
+        h2{
+            font-family: 'Indie Flower', cursive;
+            font-size: 50px;
+            color: rgb(79, 37, 146);
+            text-shadow: 2px 2px #262626;
+            cursor: pointer;
+            width: auto;
+        }
+        h2:hover{
+            font-style: italic;
+
+        }
+        img{
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+            margin-left: 10px;
+            transition-duration: 0.5s;
+        }
+        img:hover{
+            box-shadow: 10px 10px #333;
+        }
+        .dicee{
+        text-align: center;
+        display: inline-block;
+        }
+        span{
+                position: relative;
+                display: inline-block;
+                padding: 15px 30px;
+                color: #041b2e;
+                text-transform: uppercase;
+                letter-spacing: 4px;
+                text-decoration: none;
+                font-size: 24px;
+                overflow: hidden;
+                transition: 0.2s;
+                user-select: none;
+                transition-duration: 1s;
+                cursor: pointer;
+            }
+            span:hover{
+                color: #f7fafd;
+                background: #121213;
+                box-shadow: 0 0 10px #3a3c3d, 0 0 40px #414344, 0 0 80px #414344;
+                
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>LUDO</h1>
+    <h2> Lets Play</h2>
+    <div class="dicee">
+        <p>player1</p>
+    <img src="images/dice1.png" id="one">
+</div>
+<div class="dicee">
+    <p>player2</p>
+    <img src="images/dice6.png" id="two">
+</div><br><br>
+    <span onclick="game()">KHEL NA</span>
+</div>
+<script>
+    function game(){
+    const play1= Math.floor(Math.random() * 6) + 1;
+    const play1dice = "images/dice"+play1+".png";
+    document.getElementById('one').setAttribute('src',play1dice);
+    const play2= Math.floor(Math.random() * 6) + 1;
+    const play2dice = "images/dice"+play2+".png";
+    document.getElementById('two').setAttribute('src',play2dice);
+
+    if(play1>play2){
+        document.querySelector('h2').innerHTML="Ek No. Jeeta";
+    }
+    else if(play1<play2){
+        document.querySelector('h2').innerHTML="Do No jeeta";
+    }
+    else{
+        document.querySelector('h2').innerHTML="Draw Ho Gya Re";
+    }
+
+    }
+
+</script>
+</body>
+</html>
